@@ -44,8 +44,9 @@ class First extends Application {
         }
     }
     // zzz method for when /sleep url is entered
-    function zzz(){
-        
+    function zzz()
+    {
+
         $this->load->model('quotes');
         $record = $this->quotes->first();
         $this->data['pagebody'] = 'justone';
