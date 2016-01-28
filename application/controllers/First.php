@@ -38,6 +38,11 @@ class First extends Application {
         {
                 $this->zzz();
         }
+        else if ($method === 'gimme')
+        {
+            $this->gimme(3);
+        }
+
         else
         {
                 $this->index();
@@ -46,9 +51,18 @@ class First extends Application {
     // zzz method for when /sleep url is entered
     function zzz()
     {
-
         $this->load->model('quotes');
         $record = $this->quotes->first();
+        $this->data['pagebody'] = 'justone';
+
+        $this->data = array_merge($this->data, $record);
+
+        $this->render();
+    }
+    //Gimme method to display used to reroute show/3
+    function gimme($id){
+        $this->load->model('quotes');
+        $record = $this->quotes->get($id);
         $this->data['pagebody'] = 'justone';
 
         $this->data = array_merge($this->data, $record);
@@ -58,5 +72,5 @@ class First extends Application {
 
 }
 
-/* End of file Welcome.php */
-/* Location: application/controllers/Welcome.php */
+/* End of file First.php */
+/* Location: application/controllers/First.php */
