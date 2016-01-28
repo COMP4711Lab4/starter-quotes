@@ -45,9 +45,7 @@ $route['show/(:num)'] = 'first/gimme/3';
 
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 
-
-
-
+$route['comp(\d+)/(.*)'] = 'wise/bingo';
 
 
 
