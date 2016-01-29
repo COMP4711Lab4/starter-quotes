@@ -45,6 +45,14 @@ $route['show/(:num)'] = 'first/gimme/3';
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 $route['[^\s]{4}/bingo'] = 'bingo';
 $route['comp(\d+)/(.*)'] = 'wise/bingo';
+$route['dunno'] = function() {  // opens an image that I have provided 
+	$source = './data/surprise.jpg'; // an image you provide
+	// set the mime type for that image
+	header("Content-type: image/jpeg"); 
+	header('Content-Disposition: inline');
+	readfile($source); // dish it
+	die(); // and we don't have to go any further
+};     
 $route['(:any)'] = "first/$1";
 
 /* End of file routes.php */
