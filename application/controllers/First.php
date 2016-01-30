@@ -21,31 +21,27 @@ class First extends Application {
 
     function index()
     {
-        //fix first route
         $this->load->model('quotes');
         $record = $this->quotes->first();
         $this->data['pagebody'] = 'justone';
-
         $this->data = array_merge($this->data, $record);
 
         $this->render();
-
     }
     // This remaps /sleep to First/zzz
     public function _remap($method)
     {
         if ($method === 'sleep')
         {
-                $this->zzz();
+            $this->zzz();
         }
         else if ($method === 'gimme')
         {
             $this->gimme(3);
         }
-
         else
         {
-                $this->index();
+            $this->index();
         }
     }
     // zzz method for when /sleep url is entered
@@ -54,17 +50,16 @@ class First extends Application {
         $this->load->model('quotes');
         $record = $this->quotes->first();
         $this->data['pagebody'] = 'justone';
-
         $this->data = array_merge($this->data, $record);
 
         $this->render();
     }
     //Gimme method to display used to reroute show/3
     function gimme($id){
+
         $this->load->model('quotes');
         $record = $this->quotes->get($id);
         $this->data['pagebody'] = 'justone';
-
         $this->data = array_merge($this->data, $record);
 
         $this->render();
