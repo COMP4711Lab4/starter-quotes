@@ -23,11 +23,9 @@ class Wise extends Application {
         //Called the last function from the Quotes model
         $record = $this->quotes->last();
         $this->data['pagebody'] = 'justone';
-
         $this->data = array_merge($this->data, $record);
 
         $this->render();
-
     }
 
 }

@@ -16,16 +16,14 @@ class Bingo extends Application {
     }
 
     function index() {
-        //fix first route
+
         $this->load->model('quotes');
         $record = $this->quotes->get(5);
         $this->data['pagebody'] = 'justone';
-
         $this->data = array_merge($this->data, $record);
-
         $this->render();
     }
 }
 
-/* End of file First.php */
-/* Location: application/controllers/First.php */
+/* End of file Bingo.php */
+/* Location: application/controllers/Bingo.php */
